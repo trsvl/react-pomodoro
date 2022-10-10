@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Timer from "./components/Timer";
+import Status from "./components/Status";
+import EditableTimer from "./components/EditableTimer";
+import "./components/App.scss";
 
 function App() {
+  const [sessionTime, setSessionTime] = useState(0.1 * 60);
+  const [breakTime, setBreakTime] = useState(0.2 * 60);
+  const [currentText, setCurrentText] = useState("Work paused");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Timer
+        sessionTime={sessionTime}
+        setSessionTime={setSessionTime}
+        breakTime={breakTime}
+        setBreakTime={setBreakTime}
+        setCurrentText={setCurrentText}
+      />
+      <Status currentText={currentText} />
+      <div className="editable-timers">
+        <EditableTimer
+          title={"Session length"}
+          time={sessionTime}
+          setTime={setSessionTime}
+        />
+        <EditableTimer
+          title={"Break length"}
+          time={breakTime}
+          setTime={setBreakTime}
+        />
+      </div>
+    </>
   );
 }
 

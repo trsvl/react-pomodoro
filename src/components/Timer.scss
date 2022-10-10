@@ -1,0 +1,40 @@
+.timer {
+  margin-top: 50px;
+  height: 300px;
+  width: 300px;
+  * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  &__outer {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+      -6px -6px 10px -1px rgba(0, 0, 0, 0.15);
+  }
+  &__inner {
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    box-shadow: inset 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+      inset -6px -6px 10px -1px rgba(0, 0, 0, 0.15);
+    background-color: white;
+  }
+  &__circle {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    button {
+      height: 80px;
+      width: 80px;
+      &:hover {
+        * {
+          fill: rgb(133, 133, 133);
+        }
+      }
+    }
+  }
+}
