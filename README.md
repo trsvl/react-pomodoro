@@ -17,6 +17,6 @@ npm start
 ```
 Copy one of the suggested URLs and paste it into your browser's address bar.
 
-#Screenshot
+# Screenshot
 
 ![image](https://i.imgur.com/oAA0uaC.png)
