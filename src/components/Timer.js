@@ -36,9 +36,9 @@ export default function Timer({ sessionTime, setSessionTime, breakTime,  setBrea
   };
   useEffect(() => {
     const sessionValue = localStorage.getItem('session-time');
-    setSessionTime(JSON.parse(sessionValue));
+    sessionValue && setSessionTime(JSON.parse(sessionValue));
     const breakValue = localStorage.getItem('break-time');
-    setBreakTime(JSON.parse(breakValue));
+    breakValue && setBreakTime(JSON.parse(breakValue));
   }, [])
 
   useEffect(() => {
